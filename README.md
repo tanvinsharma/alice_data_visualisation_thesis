@@ -8,7 +8,7 @@ Assuming the user has Python and pip installed, we can use the following steps t
 To start off, we will create a virtual environment and download all dependencies in there
 To create it, go to the designated folder in the terminal, and run the following command:
 ```
-python3 -m venv venv
+python3 -m venv [venv]
 ```
 This will create a virtual environment called **venv**
 
