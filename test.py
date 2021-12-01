@@ -33,40 +33,52 @@ for track in db['mTracks']:
 	charge.append((c, track['charge']))
 	c += 1
 
-
+no_of_red = 0
+no_of_blue = 0
+no_of_black = 0
 for i in range(c):
 	for a_tuple in charge:
 		if i == a_tuple[0]:
 			charge_value = a_tuple[1]
+		if charge_value == 0:
+			no_of_black+=1
+		if charge_value == 1:
+			no_of_blue+=1
+		if charge_value == -1:
+			no_of_red+=1
+
 	if charge_value == 1:
 		ax.plot(x_values[i], y_values[i], z_values[i], 'b')
 	if charge_value == -1:
 		ax.plot(x_values[i], y_values[i], z_values[i], 'r')
 	if charge_value == 0:
+		no_of_black+=1
 		ax.plot(x_values[i], y_values[i], z_values[i], 'k')
-
+print(no_of_red)
+print(no_of_blue)
+print(no_of_black)
 # uncomment to see plot
-# plt.show()
+plt.show()
 
 
-size = 4
-linesgeom = Geometry(vertices=[[0, 0, 0],
-                                    [size, 0, 0],
-                                    [0, 0, 0],
-                                    [0, size, 0],
-                                    [0, 0, 0],
-                                    [0, 0, size]],
-                          colors = ['red', 'red', 'green', 'green', 'white', 'orange'])
-lines = Line(geometry=linesgeom, 
-             material=LineBasicMaterial(linewidth=5, vertexColors='VertexColors'), 
-             type='LinePieces',
-            )
-scene = Scene(children=[
-    lines,
-    DirectionalLight(color='#ccaabb', position=[0,10,0]),
-    AmbientLight(color='#cccccc'),
-    ])
-c = PerspectiveCamera(position=[10, 10, 10])
-renderer = Renderer(camera=c, background='black', background_opacity=1, scene=scene, controls=[OrbitControls(controlling=c)],
-                    width=400, height=400)
-display(renderer)
+# size = 4
+# linesgeom = Geometry(vertices=[[0, 0, 0],
+#                                     [size, 0, 0],
+#                                     [0, 0, 0],
+#                                     [0, size, 0],
+#                                     [0, 0, 0],
+#                                     [0, 0, size]],
+#                           colors = ['red', 'red', 'green', 'green', 'white', 'orange'])
+# lines = Line(geometry=linesgeom, 
+#              material=LineBasicMaterial(linewidth=5, vertexColors='VertexColors'), 
+#              type='LinePieces',
+#             )
+# scene = Scene(children=[
+#     lines,
+#     DirectionalLight(color='#ccaabb', position=[0,10,0]),
+#     AmbientLight(color='#cccccc'),
+#     ])
+# c = PerspectiveCamera(position=[10, 10, 10])
+# renderer = Renderer(camera=c, background='black', background_opacity=1, scene=scene, controls=[OrbitControls(controlling=c)],
+#                     width=400, height=400)
+# display(renderer)
