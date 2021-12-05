@@ -30,6 +30,6 @@ This should automatically open your browser to jupyter and from there on you can
 ### Method 2: Using Docker
 An alternative approach is to pull the docker image and run it
 ```
-docker pull tanvinsharma/new_project
-docker run -p 8888:8888 tanvinsharma/new_project
+docker pull tanvinsharma/alice_pythreejs
+docker run -p 8888:8888 tanvinsharma/alice_pythreejs
 ```
