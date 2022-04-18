@@ -17,6 +17,7 @@ decorator==5.1.0
 defusedxml==0.7.1
 distlib==0.3.3
 entrypoints==0.3
+fastapi==0.75.2
 filelock==3.3.2
 fonttools==4.28.2
 idna==3.3
@@ -45,6 +46,7 @@ MarkupSafe==2.0.1
 matplotlib==3.5.0
 matplotlib-inline==0.1.3
 mistune==0.8.4
+mpmath==1.2.1
 nbclassic==0.3.4
 nbclient==0.5.9
 nbconvert==6.3.0
@@ -66,6 +68,7 @@ prometheus-client==0.12.0
 prompt-toolkit==3.0.22
 ptyprocess==0.7.0
 pycparser==2.21
+pydantic==1.9.0
 Pygments==2.10.0
 pyparsing==3.0.6
 PyQt6==6.2.0
@@ -83,11 +86,13 @@ pyzmq==22.3.0
 requests==2.26.0
 Send2Trash==1.8.0
 setuptools-scm==6.3.2
-sip==6.4.0
+sip==6.5.0
 six==1.16.0
 sniffio==1.2.0
+starlette==0.17.1
 stevedore==3.5.0
-TBB
+sympy==1.9
+TBB==0.2
 terminado==0.12.1
 testpath==0.5.0
 toml==0.10.2
@@ -95,6 +100,7 @@ tomli==1.2.2
 tornado==6.1
 traitlets==5.1.1
 traittypes==0.2.1
+typing_extensions==4.2.0
 urllib3==1.26.7
 virtualenv==20.10.0
 virtualenv-clone==0.5.7
