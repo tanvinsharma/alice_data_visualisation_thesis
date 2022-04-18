@@ -33,8 +33,8 @@ from ipywidgets.embed import embed_minimal_html
 # with open('/src/tracks1635345855523.json') as file:
 # 	db = json.load(file)
 
-with open('/Users/tanvinsharma/Desktop/cern thesis/tracks1635345855523.json') as file:
-	db = json.load(file)
+# with open('/Users/tanvinsharma/Desktop/cern thesis/tracks1635345855523.json') as file:
+# 	db = json.load(file)
 
 # In[3]:
 
