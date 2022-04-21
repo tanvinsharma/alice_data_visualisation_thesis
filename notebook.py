@@ -15,8 +15,8 @@ import numpy as np
 from pythreejs import *
 from IPython.display import display
 from ipywidgets import VBox, HBox, Checkbox, jslink
-from pythreejs._example_helper import use_example_model_ids
-use_example_model_ids()
+# from pythreejs._example_helper import use_example_model_ids
+# use_example_model_ids()
 
 import ipywidgets as widgets
 import ipyvolume as ipv
@@ -45,7 +45,10 @@ def make_tracks(db: dict):
     c = 0
     charge = []
     tracks = {}
-    db['mTracks'].sort(key=lambda x: x['time'])
+    try:
+        db['mTracks'].sort(key=lambda x: x['time'])
+    except Exception as e:
+        print(e)
     for track in db['mTracks']:
         all_points = []
         for element in track['mClusters']:
@@ -74,12 +77,12 @@ def make_tracks(db: dict):
 
         linesgeom = Geometry(vertices=tracks[i])
         line = Line(geometry=linesgeom, 
-                 material=LineBasicMaterial(linewidth=5, color=charge_color[charge_value], linejoin='round'), 
-                 type='LineBasicMaterial',
-                )
+             material=LineBasicMaterial(linewidth=5, color=charge_color[charge_value], linejoin='round'), 
+             type='LineBasicMaterial',
+            )
         final.append(line) 
-
-    linez = Group(children=final)
+        
+    linez = Group(children=final, visible=True)
     scene = Scene(children=[
         linez,
         DirectionalLight(color='#ccaabb', position=[0,0,0]),

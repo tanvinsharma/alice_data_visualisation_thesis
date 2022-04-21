@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
-with open('/Users/tanvinsharma/Desktop/cern thesis/tracks1635345855523.json') as file:
+with open('/Users/tanvinsharma/Desktop/cern thesis/tracks/tracks1647477806262.json') as file:
 	db = json.load(file)
 
 fig = plt.figure(figsize=(10,10))
