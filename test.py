@@ -46,12 +46,5 @@ for i in range(c):
 		ax.plot(x_values[i], y_values[i], z_values[i], 'b')
 	if charge_value == -1:
 		ax.plot(x_values[i], y_values[i], z_values[i], 'r')
-	# if charge_value == 0:
-	# 	no_of_black+=1
-	# 	ax.plot(x_values[i], y_values[i], z_values[i], 'k')
-# print(no_of_red)
-# print(no_of_blue)
-# print(no_of_black)
-# uncomment to see plot
 plt.show()
 

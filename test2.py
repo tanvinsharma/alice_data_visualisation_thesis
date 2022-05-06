@@ -81,8 +81,7 @@ def make_tracks(db: dict):
              type='LineBasicMaterial',
             )
         final.append(line) 
-    print(final[0])   
-    linez = Group(children=[final[0]])
+    linez = Group(children=final)
     scene = Scene(children=[
         linez,
         DirectionalLight(color='#ccaabb', position=[0,0,0]),
@@ -92,16 +91,17 @@ def make_tracks(db: dict):
     renderer = Renderer(camera=c, background='black', background_opacity=1, scene=scene, controls=[OrbitControls(controlling=c)],
                         width=700, height=700)
 
-    embed_minimal_html('templates/export.html', views=[renderer], title='Tracks projection')
+    return renderer
+    # embed_minimal_html('templates/export.html', views=[renderer], title='Tracks projection')
 # display(renderer)
 
-make_tracks(db)
+renderer = make_tracks(db)
+print(renderer)
 # In[4]:
 
 
-from ipywidgets import IntSlider
-from ipywidgets.embed import embed_minimal_html
 
+from ipywidgets import IntSlider
 slider = IntSlider(value=40)
 # embed_minimal_html('export.html', views=[slider, renderer], title='Widgets export')
 

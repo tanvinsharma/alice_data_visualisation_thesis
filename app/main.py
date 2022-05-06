@@ -34,5 +34,5 @@ async def create_upload_file(file: UploadFile, request: Request):
 	json_contents = json.loads(contents)
 	make_tracks(json_contents)
 	return templates.TemplateResponse("export.html", {"request": request})
-	# return Response(content=contents, media_type="application/json")
+	
 	
