@@ -1,13 +1,13 @@
 import * as THREE from 'three';
+// import OBJLoader from 'three/examples/jsm/loaders/OBJLoader.js';
 import OrbitControls from 'three-orbitcontrols';
 import Scene from "../resources/Scene";
 import Mpoly from "../shapes/Mpoly";
 import SpotLight from '../resources/SpotLight';
 import React, { Component } from 'react';
 import '../../styles/scenes/ApiLineSegments.css';
-import * as dat from 'dat.gui';
 
-// const gui = new dat.GUI();
+
 var charge_pos_group = new THREE.Group();
 charge_pos_group.name = "positive";
 var charge_neg_group = new THREE.Group();
@@ -19,7 +19,7 @@ charge_net_group.name = "neutral";
 // var core = gui.addFolder('Core');
 // light.open();
 // core.open();
-
+// const loader = new OBJLoader();
 var renderer = new THREE.WebGLRenderer();
 var camera = new THREE.PerspectiveCamera(
   45, 

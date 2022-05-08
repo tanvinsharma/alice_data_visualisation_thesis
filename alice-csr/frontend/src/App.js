@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import Mpolygon from './components/scenes/Mpolygon.js';
+// import ImportGlb from './components/scenes/ImportGlb.js'
 
 class App extends Component {
 	constructor(props) {
@@ -43,6 +44,7 @@ class App extends Component {
 					  </>
 				)
 			: <Mpolygon json={JSON.parse(this.state.json)} time_arr={ [-80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90] }/>
+			// : <ImportGlb/>
 		}
 		</div>)
 	}
