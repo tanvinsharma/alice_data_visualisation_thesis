@@ -5,6 +5,7 @@
   "dependencies": {
     "@babel/helper-call-delegate": "^7.12.1",
     "@babel/helper-regex": "^7.10.5",
+    "d3": "^7.4.4",
     "dat.gui": "^0.7.7",
     "fs": "^0.0.1-security",
     "jsroot": "^5.8.1",

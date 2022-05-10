@@ -1,0 +1,11 @@
+Model Information:
+* title:	Cylinder Transparent Artistic Reference
+* source:	https://sketchfab.com/3d-models/cylinder-transparent-artistic-reference-6951cfeb304441b090049e3dd3b0aa4c
+* author:	dgscott922 (https://sketchfab.com/dgscott922)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Cylinder Transparent Artistic Reference" (https://sketchfab.com/3d-models/cylinder-transparent-artistic-reference-6951cfeb304441b090049e3dd3b0aa4c) by dgscott922 (https://sketchfab.com/dgscott922) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

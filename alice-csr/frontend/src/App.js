@@ -32,7 +32,8 @@ class App extends Component {
 		var json = this.state.json;
 		var json_any = Object.keys(json).length === 0
 
-		return(<div> 
+		return(<>
+			<div> 
 			{ json_any ? (<>
 		  		<h1>ALICE Experiment -  Upload File!</h1>
 					  <div id="outputDiv"> </div>
@@ -46,7 +47,9 @@ class App extends Component {
 			: <Mpolygon json={JSON.parse(this.state.json)} time_arr={ [-80, -70, -60, -50, -40, -30, -20, -10, 0, 10, 20, 30, 40, 50, 60, 70, 80, 90] }/>
 			// : <ImportGlb/>
 		}
-		</div>)
+		</div>
+		</>)
+
 	}
 }
 

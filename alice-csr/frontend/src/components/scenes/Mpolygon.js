@@ -53,7 +53,6 @@ var findTimeSegment = function(tracks, current_time) {
   if(tracks.length > 0) {
     tracks.forEach(function(element, index) {
       if(element.time <= current_time) {
-        console.log(element.time, current_time)
         new_tracks.push(element);
       }
     })
@@ -103,12 +102,15 @@ class Mpolygon extends Component {
       charge_net_group_visible: true,
       first_render: true,
       current_time: 0,
-      time_arr: []
+      time_arr: [],
+      graph: 'time_v_particle'
     }
 
     this.handleChangeRequest = this.handleChangeRequest.bind(this);
     this.updateVisibility = this.updateVisibility.bind(this);
     this.updateTimeTracks = this.updateTimeTracks.bind(this);
+    this.handleGraphChange = this.handleGraphChange.bind(this);
+    this.handleGraphs = this.handleGraphs.bind(this);
   }
   
   componentDidMount() {
@@ -125,6 +127,8 @@ class Mpolygon extends Component {
       this.onWindowResize, 
       false 
     );
+    localStorage.setItem('input_data', JSON.stringify(this.state.tracks));
+    document.getElementById('graph_type').value = localStorage.getItem('graph_type');
   }
 
   onDocumentMouseMove(event) {
@@ -214,6 +218,19 @@ class Mpolygon extends Component {
     console.log(e.target.value);
     this.setState({current_time: e.target.value});
   }
+  
+  handleGraphChange(event) {
+    this.setState({graph_type: event.target.value});
+    localStorage.setItem('graph_type', event.target.value);
+  }
+
+  handleGraphs(event) {
+    window.open("http://localhost:3000/graphs/", '_blank');
+
+    alert('Graph opened in new window ' + this.state.graph);
+    event.preventDefault();
+  }
+
   render() {
     charge_pos_group.visible = this.state.charge_pos_group_visible;
     charge_neg_group.visible = this.state.charge_neg_group_visible;
@@ -227,7 +244,24 @@ class Mpolygon extends Component {
     return(
       <div>
         {this.handleChangeRequest()}
-
+        <div style={{'zIndex': 265, position: 'absolute', right: 10, top: 10, color: 'black'}}> 
+          <div className="box">
+            <div className="select">
+              <h1>Graphs</h1>
+            </div>
+            <form onSubmit={this.handleGraphs}>
+              <select id="graph_type" onChange={this.handleGraphChange}>
+                <option value="time_v_particle">Time vs Particles</option>
+                <option value="saab">Saab</option>
+                <option value="fiat">Fiat</option>
+                <option value="audi">Audi</option>
+              </select>
+              <br/>
+              <br/>
+              <input type="submit" value="Open Graph"/>
+              </form>
+            </div>
+            </div>
         <div style={{'zIndex': 265, position: 'absolute', right: 10, bottom: 10, color: 'black'}}> 
           <div className="box">
             <div className="slidecontainer">
