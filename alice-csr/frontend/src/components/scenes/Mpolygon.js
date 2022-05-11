@@ -15,11 +15,6 @@ charge_neg_group.name = "negative";
 var charge_net_group = new THREE.Group();
 charge_net_group.name = "neutral";
 
-// var light = gui.addFolder('Light');
-// var core = gui.addFolder('Core');
-// light.open();
-// core.open();
-// const loader = new OBJLoader();
 var renderer = new THREE.WebGLRenderer();
 var camera = new THREE.PerspectiveCamera(
   45, 
@@ -226,8 +221,6 @@ class Mpolygon extends Component {
 
   handleGraphs(event) {
     window.open("http://localhost:3000/graphs/", '_blank');
-
-    alert('Graph opened in new window ' + this.state.graph);
     event.preventDefault();
   }
 
@@ -252,9 +245,10 @@ class Mpolygon extends Component {
             <form onSubmit={this.handleGraphs}>
               <select id="graph_type" onChange={this.handleGraphChange}>
                 <option value="time_v_particle">Time vs Particles</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
+                <option value="charge_particle_pie">Charge Particle Count</option>
+                <option value="theta_phi_lolipop">Theta/Phi vs Time</option>
+                <option value="theta_time">Theta vs Time</option>
+                <option value="phi_time">Phi vs Time</option>
               </select>
               <br/>
               <br/>

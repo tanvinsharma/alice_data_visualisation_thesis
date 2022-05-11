@@ -1,8 +1,14 @@
 import React, { Component } from 'react';
 import TimeVParticles from './components/scenes/TimeVParticles.js';
+import ChargeParticlePie  from './components/scenes/ChargeParticlePie.js'
+import ThetaPieLolipop  from './components/scenes/ThetaPieLolipop.js'
+import ThetaTime  from './components/scenes/ThetaTime.js'
 
 const GRAPHS = {
-  time_v_particle: TimeVParticles
+  time_v_particle: TimeVParticles,
+  charge_particle_pie: ChargeParticlePie,
+  theta_phi_lolipop: ThetaPieLolipop,
+  theta_time: ThetaTime
 }
 
 class Graphs extends Component {
