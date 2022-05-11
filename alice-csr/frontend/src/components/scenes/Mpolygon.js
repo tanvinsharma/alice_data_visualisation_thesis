@@ -39,7 +39,10 @@ var sphereInter = new THREE.Mesh(
   new THREE.SphereBufferGeometry( 5 ),
   new THREE.MeshBasicMaterial( { color: 0xff0000 })
 );
-
+var material = new THREE.MeshBasicMaterial( { wireframe: false, opacity: 0.5, rotate: 120, transparent: true, color: 0xffff00, alphaMap: 0x000000});
+// material.color = '0xffff00'
+var mesh = new THREE.Mesh(new THREE.CylinderGeometry(10, 10, 50, 8, 1, true), material);
+scene.add(mesh);
 var group = new THREE.Group();
 
 var findTimeSegment = function(tracks, current_time) {
