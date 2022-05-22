@@ -106,6 +106,7 @@ class TimeVParticles extends Component {
         <p>
           <label># bins</label>
           <input onChange={ this.handleChange } type="number" min="1" max="100" step="1" id="nBin"/>
+          <button id='download'>Download</button>
         </p>
       </>
     )

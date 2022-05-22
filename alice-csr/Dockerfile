@@ -13,5 +13,5 @@ RUN cp execute /usr/bin/
 RUN npm install
 WORKDIR /home/alice_all/alice-front
 RUN npm install
-EXPOSE 3000 80
+EXPOSE 3000
 CMD ["bash", "execute"]
