@@ -1,0 +1,18 @@
+# to write
+
+version: "3.3"  # optional since v1.27.0
+services:
+  alice-front:
+    build:
+      dockerfile: Dockerfile
+      context: ./alice/
+    ports:
+      - "3002:3000"
+    entrypoint: ./alice/entrypoint.sh
+  alice-back:
+    build:
+      dockerfile: Dockerfile
+      context: ./csr/
+      ports: 
+        - "3001:3000"
+      entrypoint: ./csr/entrypoint.sh

@@ -1,0 +1,16 @@
+services:
+  alice-front:
+    build:
+      dockerfile: Dockerfile
+      context: ./csr
+    entrypoint: ./entrypoint.sh
+    ports:
+      - 3001:3000
+
+  alice-back:
+    build:
+      dockerfile: Dockerfile
+      context: ./alice
+    entrypoint: ./entrypoint.sh
+    ports: 
+      - 8000:8000
