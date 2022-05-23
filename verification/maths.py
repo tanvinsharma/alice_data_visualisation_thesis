@@ -16,11 +16,11 @@ data = {'mTracks': []}
 
 def createTracks():
 	t = np.linspace(- 2*np.pi, 2*np.pi, 1000)
-	r = np.linspace(-10, 16, 1000)
+	r = random.uniform(1, 10)
 	# x = t - (1.6 * np.cos(24*t))
 	# y = t - (1.6 * np.sin(25*t))
 	# z = x*y*100
-	c = random.uniform(0.01, 1)
+	c = random.uniform(1, 10)
 	x = r * np.cos(t)
 	y = r * np.sin(t)
 	z = c * t
